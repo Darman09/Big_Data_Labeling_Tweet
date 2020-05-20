@@ -14,7 +14,7 @@ ADD . /workspace
 RUN cd /workspace
 
 # Clone git repo
-RUN git clone https://github.com/Darman09/Big_Data_DAHLEM_Romain_M2_IOT.git
+RUN git clone https://github.com/Darman09/Big_Data_Labeling_Tweet.git
 
 CMD ["cd","/workspace/Big_Data_Labeling_Tweet/Docker"]
 
