@@ -32,4 +32,5 @@ EXPOSE 8000
 
 # Go to workspace
 # CMD workspace --port 8000
-CMD ["python3","./api.py"]
+
+# CMD ["python3","./api.py"]
