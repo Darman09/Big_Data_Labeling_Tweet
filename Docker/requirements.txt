@@ -1,0 +1,7 @@
+jupyter
+numpy
+pandas
+Flask
+pickle
+json
+profanity_check
