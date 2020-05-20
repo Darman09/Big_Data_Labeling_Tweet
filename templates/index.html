@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Tweet Analyzer</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/materialize.min.css') }}">
+</head>
+
+<body>        
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="{{ url_for('static', filename='js/materialize.min.js') }}"></script>
+  <div class="contenair">
+    <div class="row">
+  <nav>
+    <div class="nav-wrapper light-blue darken-1">
+      <div class="col s12">
+      <a href="#" class="brand-logo light-blue darken-1">Tweet Emotion</a>
+    </div>
+    </div>
+  </nav>
+  <div class="row">
+      <div class="col s12">
+ <div class="login">
+	<h1 class="amber-text accent-4">Analyseur de tweet</h1>
+  
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('tweet')}}"method="post">
+      <div class="input-field col s12">
+        <div class="col s3 input-field">
+          <label for="hate">Mot haineux</label>
+          <p class="range-field">
+            <input type="range" id="hate" name="hate" min="0" max="10" value="5"/>
+          </p>
+        </div>
+        <div class="col s3 input-field">
+          <label for="offensive">Mot offensant</label>
+          <p class="range-field">
+            <input type="range" id="offensive" name="offensive" min="0" max="10" value="5"/>
+          </p>
+        </div>
+        <div class="col s3 input-field">
+          <label for="neither">Mot neutre</label>
+          <p class="range-field">
+            <input type="range" id="neither" name="neither" min="0" max="10" value="5"/>
+          </p>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary btn-block light-blue darken-1">Rechercher</button>
+    </form>
+    <h5>{{ listKeyWordVal }}</h5>
+  <h5>{{ result }}<h5>
+  <h4 class="red-text darken-4">{{ error }}<h4>
+ </div> 
+ </div>
+</div> 
+</div>
+</div>
+</body>
+</html>
